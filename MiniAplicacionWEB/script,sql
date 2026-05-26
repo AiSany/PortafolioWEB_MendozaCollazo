@@ -1,0 +1,23 @@
+
+CREATE DATABASE IF NOT EXISTS proyecto_web;
+USE proyecto_web;
+
+
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    password VARCHAR(40) NOT NULL ; -- SHA1 genera un hash de 40 caracteres
+
+-- Tabla para contactos (Requerimiento 1.10)
+CREATE TABLE IF NOT EXISTS contactos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100),
+    telefono VARCHAR(20)
+);
+
+-- Tabla para citas (Requerimiento 1.10)
+CREATE TABLE IF NOT EXISTS citas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha DATE,
+    asunto TEXT
+);
